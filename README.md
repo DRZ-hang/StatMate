@@ -7,7 +7,7 @@
 ### Evidence-first statistical workflows for research agents.
 
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-8A2BE2)](statmate/SKILL.md)
-[![StatMate tests](https://github.com/DRZ-hang/paper-figures/actions/workflows/statmate-tests.yml/badge.svg)](https://github.com/DRZ-hang/paper-figures/actions/workflows/statmate-tests.yml)
+[![StatMate tests](https://github.com/DRZ-hang/StatMate/actions/workflows/statmate-tests.yml/badge.svg)](https://github.com/DRZ-hang/StatMate/actions/workflows/statmate-tests.yml)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -156,16 +156,16 @@ agent, so use the destination agent's current documentation for placement.
 **1. Get the skill:**
 
 ```bash
-git clone https://github.com/DRZ-hang/paper-figures.git
+git clone https://github.com/DRZ-hang/StatMate.git
 ```
 
 **2. Put the `statmate/` folder where your agent looks for skills:**
 
 - **Claude Code** — `~/.claude/skills/` (all projects) or a project's `.claude/skills/`:
   ```bash
-  cp -r paper-figures/statmate ~/.claude/skills/statmate
+  cp -r StatMate/statmate ~/.claude/skills/statmate
   # Windows PowerShell:
-  # Copy-Item -Recurse paper-figures\statmate $env:USERPROFILE\.claude\skills\statmate
+  # Copy-Item -Recurse StatMate\statmate $env:USERPROFILE\.claude\skills\statmate
   ```
 - **OpenAI Codex** — copy the folder into Codex's skills directory (see your Codex setup's skills docs for the exact path).
 - **Other skill-capable agents** — drop the same `statmate/` folder into that agent's skills location. Because the skill is just `SKILL.md` + scripts, one folder works everywhere; only the destination directory differs per agent.
@@ -312,6 +312,6 @@ Per-example details and license notes: [penguins](examples/penguins-sexual-dimor
 <div align="center">
 
 **Designed for OpenAI Codex, Claude Code, and other folder-based skill workflows.** If this helps
-your research, please ⭐ the repo after it becomes public.
+your research, a ⭐ helps other researchers discover it.
 
 </div>

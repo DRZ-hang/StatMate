@@ -7,7 +7,7 @@
 ### 面向科研 Agent 的证据优先统计工作流。
 
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-8A2BE2)](statmate/SKILL.md)
-[![StatMate tests](https://github.com/DRZ-hang/paper-figures/actions/workflows/statmate-tests.yml/badge.svg)](https://github.com/DRZ-hang/paper-figures/actions/workflows/statmate-tests.yml)
+[![StatMate tests](https://github.com/DRZ-hang/StatMate/actions/workflows/statmate-tests.yml/badge.svg)](https://github.com/DRZ-hang/StatMate/actions/workflows/statmate-tests.yml)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -141,16 +141,16 @@
 **1. 获取技能:**
 
 ```bash
-git clone https://github.com/DRZ-hang/paper-figures.git
+git clone https://github.com/DRZ-hang/StatMate.git
 ```
 
 **2. 把 `statmate/` 文件夹放到你所用 agent 的 skills 目录：**
 
 - **Claude Code** — `~/.claude/skills/`(所有项目)或某项目的 `.claude/skills/`:
   ```bash
-  cp -r paper-figures/statmate ~/.claude/skills/statmate
+  cp -r StatMate/statmate ~/.claude/skills/statmate
   # Windows PowerShell:
-  # Copy-Item -Recurse paper-figures\statmate $env:USERPROFILE\.claude\skills\statmate
+  # Copy-Item -Recurse StatMate\statmate $env:USERPROFILE\.claude\skills\statmate
   ```
 - **OpenAI Codex** — 把该文件夹复制进 Codex 的 skills 目录(具体路径见你所用 Codex 的 skills 文档)。
 - **其他支持 skills 的 agent（如小龙虾等）** — 同样把 `statmate/` 文件夹放进该 agent 的 skills 位置即可。技能本质就是 `SKILL.md` + 脚本，一个文件夹各处通用，只是目标目录因 agent 而异。
@@ -287,7 +287,7 @@ StatMate（统计同学）是辅助你从数据出发完成分析与图表制作
 
 <div align="center">
 
-**面向 OpenAI Codex、Claude Code 与其他文件夹式 Skill 工作流设计。** 等仓库公开后，
-如果它帮到了你的研究，欢迎点亮 ⭐。
+**面向 OpenAI Codex、Claude Code 与其他文件夹式 Skill 工作流设计。** 如果它帮到了你的研究，
+一颗 ⭐ 也能帮助更多研究者发现它。
 
 </div>
