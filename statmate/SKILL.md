@@ -42,8 +42,10 @@ regulated studies, or confirmatory analyses.
 
 ## Communication and scope
 
-Use the user's language. Infer the deliverable language from the manuscript and venue; if unclear,
-ask once or default to bilingual Chinese/English and state the choice.
+Use the language the user uses with the agent unless they request another language. Keep the
+manuscript and submission materials in their existing language by default; conversation language
+and manuscript language are separate choices. Translate or adapt materials for a local-language
+journal only when the user explicitly asks.
 
 Route the request before starting work:
 

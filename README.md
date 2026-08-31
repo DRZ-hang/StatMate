@@ -51,7 +51,8 @@ traceable to source data, machine-readable results, and the script that produced
   when requested.
 - 🧑‍🏫 **Interpretation + reading instruction** — explain the effect, uncertainty, relevance, and
   limits, then teach the user how to inspect each mark, interval, row, column, and footnote.
-- 🌏 **Output language is your choice** — English-only, Chinese-only, or bilingual captions & reports.
+- 🌏 **Talk to StatMate in your language** — it replies in the language you use while leaving the
+  manuscript language unchanged unless you ask for translation or localization.
 - 🧰 **Core plus optional stacks** — matplotlib and seaborn in the core profile; plotnine, plotly,
   lifelines, and scikit-learn are available through optional dependency profiles.
 - ♻️ **Auditable reproducibility** — fixed seeds, saved scripts, machine-readable results, recorded
@@ -131,16 +132,15 @@ The skill is a disciplined workflow, not a one-shot prompt — the same path a c
 
 ---
 
-## 🌐 Output language
+## 🌐 Language
 
-Tell your agent which language you want the captions, annotations and report in — or let it infer
-from your manuscript:
+Talk to StatMate in whichever language is most comfortable for you. It replies in the language you
+use by default. This changes the conversation only: your manuscript and submission materials stay
+in their existing language (for example, an English manuscript stays in English) unless you
+explicitly ask StatMate to translate or adapt them for a local-language journal.
 
-- **English only** — international journal / English manuscript
-- **中文 only** — Chinese thesis or journal
-- **Bilingual** — captions in both (great while drafting or for a bilingual team)
-
-See the heart-failure example for the same report rendered
+The heart-failure reports below show English, Chinese, and bilingual output variants. They are
+examples, not a limit on the languages you can use with StatMate:
 [in English](examples/heart-failure-survival/Figure_Report_EN.docx),
 [bilingual](examples/heart-failure-survival/Figure_Report.docx), and
 [in Chinese](examples/heart-failure-survival/Figure_Report_ZH.docx).
