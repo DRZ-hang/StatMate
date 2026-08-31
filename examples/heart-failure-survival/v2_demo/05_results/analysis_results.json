@@ -1,0 +1,141 @@
+{
+  "validation": {
+    "source_sha256": "9c73cea7468ff5d517801ec050fe9993da5912fce4b56f296f8df3b38dd75912",
+    "shape": [
+      299,
+      13
+    ],
+    "expected_columns_exact": true,
+    "duplicate_rows_n": 0,
+    "missing_cells_n": 0,
+    "anaemia_binary": true,
+    "diabetes_binary": true,
+    "high_blood_pressure_binary": true,
+    "sex_binary": true,
+    "smoking_binary": true,
+    "DEATH_EVENT_binary": true,
+    "broad_range_checks": {
+      "age": true,
+      "ejection_fraction": true,
+      "serum_creatinine": true,
+      "serum_sodium": true,
+      "platelets": true,
+      "creatinine_phosphokinase": true,
+      "time": true
+    },
+    "patients_n": 299,
+    "deaths_n": 96,
+    "censored_n": 203,
+    "follow_up_median_days": 115.0,
+    "follow_up_range_days": [
+      4,
+      285
+    ],
+    "ef_group_counts": {
+      "≤30%": 93,
+      "31–45%": 146,
+      ">45%": 60
+    }
+  },
+  "logrank_p": 1.8068545591370983e-07,
+  "risk_counts": {
+    "≤30%": [
+      93,
+      67,
+      38,
+      27,
+      5
+    ],
+    "31–45%": [
+      146,
+      124,
+      83,
+      63,
+      26
+    ],
+    ">45%": [
+      60,
+      48,
+      24,
+      16,
+      3
+    ]
+  },
+  "cox": {
+    "c_index": 0.7295688082204936,
+    "ef_hr": 0.7915899637464464,
+    "ef_lo": 0.716350433376267,
+    "ef_hi": 0.8747320326879282,
+    "cr_hr": 1.3557118645840467,
+    "cr_lo": 1.1823599065356374,
+    "cr_hi": 1.5544798581332435,
+    "ph_test_p": {
+      "age_10y": 0.8299839722635416,
+      "anaemia": 0.9213447621759113,
+      "creatinine_1": 0.07705674727338238,
+      "ef_5pct": 0.025343296998847246,
+      "high_blood_pressure": 0.8260995727750147,
+      "sodium_5": 0.1424128254076263
+    },
+    "ph_diagnostics": {
+      "status": "needs-author-decision",
+      "covariate_test_p": {
+        "age_10y": 0.8299839722635416,
+        "anaemia": 0.9213447621759113,
+        "creatinine_1": 0.07705674727338238,
+        "ef_5pct": 0.025343296998847246,
+        "high_blood_pressure": 0.8260995727750147,
+        "sodium_5": 0.1424128254076263
+      },
+      "flagged_covariates": [
+        "ef_5pct"
+      ],
+      "nonfinite_covariates": [],
+      "global_test_p": null,
+      "graphical_review_completed": false,
+      "review_reasons": [
+        "Covariate-level PH-test p<0.05 for ejection fraction.",
+        "A global PH diagnostic has not been completed.",
+        "Graphical scaled-Schoenfeld-residual review remains an author task."
+      ]
+    },
+    "ph_message": "Covariate-level PH-test p<0.05 for ejection fraction. A global PH diagnostic has not been completed. Graphical scaled-Schoenfeld-residual review remains an author task.",
+    "fit_completed": true
+  },
+  "prediction": {
+    "full_auc": "0.766 (0.061)",
+    "two_auc": "0.757 (0.063)",
+    "full_brier": "0.177 (0.023)",
+    "two_brier": "0.181 (0.019)",
+    "fixed_oof": {
+      "All 11 baseline features": {
+        "fixed_5fold_auc": 0.7594930213464697,
+        "fixed_5fold_brier": 0.17915507229554242
+      },
+      "Creatinine + ejection fraction": {
+        "fixed_5fold_auc": 0.7534893267651888,
+        "fixed_5fold_brier": 0.18217044049243608
+      }
+    },
+    "feature_sets": {
+      "All 11 baseline features": [
+        "age",
+        "ejection_fraction",
+        "serum_creatinine",
+        "serum_sodium",
+        "platelets",
+        "creatinine_phosphokinase",
+        "sex",
+        "anaemia",
+        "diabetes",
+        "high_blood_pressure",
+        "smoking"
+      ],
+      "Creatinine + ejection fraction": [
+        "serum_creatinine",
+        "ejection_fraction"
+      ]
+    }
+  },
+  "overall_status": "needs-author-decision"
+}

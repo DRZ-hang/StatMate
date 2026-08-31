@@ -1,0 +1,305 @@
+{
+  "audit_version": 1,
+  "created_utc": "2026-08-16T03:27:55.701141+00:00",
+  "source": {
+    "path": "examples/heart-failure-survival/data/heart_failure_clinical_records.csv",
+    "sheet": null,
+    "size_bytes": 12239,
+    "modified_utc": "2026-06-13T09:20:29.934822+00:00",
+    "sha256": "9c73cea7468ff5d517801ec050fe9993da5912fce4b56f296f8df3b38dd75912"
+  },
+  "shape": {
+    "rows": 299,
+    "columns": 13
+  },
+  "duplicate_rows_n": 0,
+  "columns": [
+    {
+      "name": "age",
+      "position": 0,
+      "dtype": "float64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 47,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 40.0,
+        "q1": 51.0,
+        "median": 60.0,
+        "q3": 70.0,
+        "max": 95.0,
+        "mean": 60.83389297658862,
+        "sd": 11.89480907404447,
+        "zero_n": 0,
+        "negative_n": 0
+      }
+    },
+    {
+      "name": "anaemia",
+      "position": 1,
+      "dtype": "int64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 2,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 1.0,
+        "max": 1,
+        "mean": 0.431438127090301,
+        "sd": 0.4961072681330793,
+        "zero_n": 170,
+        "negative_n": 0
+      }
+    },
+    {
+      "name": "creatinine_phosphokinase",
+      "position": 2,
+      "dtype": "int64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 208,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 23,
+        "q1": 116.5,
+        "median": 250.0,
+        "q3": 582.0,
+        "max": 7861,
+        "mean": 581.8394648829432,
+        "sd": 970.2878807124362,
+        "zero_n": 0,
+        "negative_n": 0
+      }
+    },
+    {
+      "name": "diabetes",
+      "position": 3,
+      "dtype": "int64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 2,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 1.0,
+        "max": 1,
+        "mean": 0.4180602006688963,
+        "sd": 0.49406706510360904,
+        "zero_n": 174,
+        "negative_n": 0
+      }
+    },
+    {
+      "name": "ejection_fraction",
+      "position": 4,
+      "dtype": "int64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 17,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 14,
+        "q1": 30.0,
+        "median": 38.0,
+        "q3": 45.0,
+        "max": 80,
+        "mean": 38.08361204013378,
+        "sd": 11.834840741039171,
+        "zero_n": 0,
+        "negative_n": 0
+      }
+    },
+    {
+      "name": "high_blood_pressure",
+      "position": 5,
+      "dtype": "int64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 2,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 1.0,
+        "max": 1,
+        "mean": 0.3511705685618729,
+        "sd": 0.47813637906274475,
+        "zero_n": 194,
+        "negative_n": 0
+      }
+    },
+    {
+      "name": "platelets",
+      "position": 6,
+      "dtype": "float64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 176,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 25100.0,
+        "q1": 212500.0,
+        "median": 262000.0,
+        "q3": 303500.0,
+        "max": 850000.0,
+        "mean": 263358.02926421404,
+        "sd": 97804.2368685983,
+        "zero_n": 0,
+        "negative_n": 0
+      }
+    },
+    {
+      "name": "serum_creatinine",
+      "position": 7,
+      "dtype": "float64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 40,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 0.5,
+        "q1": 0.9,
+        "median": 1.1,
+        "q3": 1.4,
+        "max": 9.4,
+        "mean": 1.3938795986622072,
+        "sd": 1.0345100640898541,
+        "zero_n": 0,
+        "negative_n": 0
+      }
+    },
+    {
+      "name": "serum_sodium",
+      "position": 8,
+      "dtype": "int64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 27,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 113,
+        "q1": 134.0,
+        "median": 137.0,
+        "q3": 140.0,
+        "max": 148,
+        "mean": 136.62541806020067,
+        "sd": 4.412477283909235,
+        "zero_n": 0,
+        "negative_n": 0
+      }
+    },
+    {
+      "name": "sex",
+      "position": 9,
+      "dtype": "int64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 2,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 0,
+        "q1": 0.0,
+        "median": 1.0,
+        "q3": 1.0,
+        "max": 1,
+        "mean": 0.6488294314381271,
+        "sd": 0.47813637906274475,
+        "zero_n": 105,
+        "negative_n": 0
+      }
+    },
+    {
+      "name": "smoking",
+      "position": 10,
+      "dtype": "int64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 2,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 1.0,
+        "max": 1,
+        "mean": 0.3210702341137124,
+        "sd": 0.46767042805677167,
+        "zero_n": 203,
+        "negative_n": 0
+      }
+    },
+    {
+      "name": "time",
+      "position": 11,
+      "dtype": "int64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 148,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 4,
+        "q1": 73.0,
+        "median": 115.0,
+        "q3": 203.0,
+        "max": 285,
+        "mean": 130.2608695652174,
+        "sd": 77.61420795029339,
+        "zero_n": 0,
+        "negative_n": 0
+      }
+    },
+    {
+      "name": "DEATH_EVENT",
+      "position": 12,
+      "dtype": "int64",
+      "missing_n": 0,
+      "missing_pct": 0.0,
+      "unique_n": 2,
+      "constant": false,
+      "all_missing": false,
+      "suspected_identifier": false,
+      "numeric": {
+        "min": 0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 1.0,
+        "max": 1,
+        "mean": 0.3210702341137124,
+        "sd": 0.46767042805677167,
+        "zero_n": 203,
+        "negative_n": 0
+      }
+    }
+  ],
+  "warnings": []
+}

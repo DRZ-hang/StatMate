@@ -1,0 +1,17 @@
+-r requirements.txt
+
+# Optional convenience statistics and annotations
+pingouin>=0.5
+statannotations>=0.6
+
+# Optional plotting stacks
+plotnine>=0.13
+plotly>=5.20
+kaleido>=0.2
+
+# Specialized analyses
+lifelines>=0.27
+scikit-learn>=1.3
+
+# Legacy Excel input
+xlrd>=2.0

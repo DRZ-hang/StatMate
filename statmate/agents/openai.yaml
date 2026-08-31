@@ -1,0 +1,4 @@
+interface:
+  display_name: "StatMate（统计同学）"
+  short_description: "Your research statistics and figure-reading partner"
+  default_prompt: "Use $statmate to review my study design and real data, propose an auditable statistical analysis, and produce explained figures, tables, and an illustrated reading guide."

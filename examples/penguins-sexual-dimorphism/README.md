@@ -1,8 +1,8 @@
 # Example — Sexual Dimorphism in Antarctic Penguins / 案例:南极企鹅的性二态
 
-A complete worked example of the **paper-figures** skill, run end-to-end on a real,
+A complete worked example of **StatMate（统计同学）**, run end-to-end on a real,
 openly licensed published dataset. / 在一个真实、开放许可的已发表数据集上,端到端运行
-**paper-figures** 技能的完整案例。
+**StatMate（统计同学）** 的完整案例。
 
 ## What this shows / 演示内容
 
@@ -48,7 +48,7 @@ lines), the standard academic format. / 表格为标准学术**三线表**(仅�
 ## Reproduce it / 复现
 
 ```bash
-pip install -r ../../paper-figures/requirements.txt   # numpy pandas matplotlib scipy scikit-learn python-docx
+pip install -r ../../statmate/requirements-demo.txt   # includes scikit-learn and python-docx
 cd scripts
 # figures
 for f in make_fig*.py; do python "$f"; done

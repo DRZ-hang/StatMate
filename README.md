@@ -2,57 +2,94 @@
 
 **English** · [中文](README.zh-CN.md)
 
-# 📊 paper-figures
+# 📊 StatMate（统计同学）
 
-### Turn your paper's raw data into publication-ready figures & tables — with one AI skill.
+### Evidence-first statistical workflows for research agents.
 
-[![Agent Skill](https://img.shields.io/badge/Agent-Skill-8A2BE2)](https://claude.com/claude-code)
+[![Agent Skill](https://img.shields.io/badge/Agent-Skill-8A2BE2)](statmate/SKILL.md)
+[![StatMate tests](https://github.com/DRZ-hang/paper-figures/actions/workflows/statmate-tests.yml/badge.svg)](https://github.com/DRZ-hang/paper-figures/actions/workflows/statmate-tests.yml)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Output](https://img.shields.io/badge/output-EN%20%2F%20双语%20%2F%20中文-red.svg)](#-output-language)
-[![Reproducible](https://img.shields.io/badge/results-100%25%20reproducible-success.svg)](#-reproducibility)
 
 </div>
 
----
+![StatMate: evidence-first statistical workflows](.github/assets/statmate-hero.svg)
 
-**paper-figures** is an **Agent Skill** — portable across [Claude Code](https://claude.com/claude-code),
-OpenAI Codex, and other skill-capable agents — that takes a manuscript and its **raw data** and
-produces the figures and tables a journal will accept. Every result comes from genuine statistical
-computation on your own data, and each chart is chosen to fit what the paper sets out to argue. Figures are drawn by plotting code (matplotlib, seaborn, and friends), so the
-whole pipeline is free of any generative image model and stays well clear of the AI
-image-generation line — every pixel traces back to a number in your dataset. The skill reads the
-paper, finds where visuals are needed, picks the right statistics and chart for the data, applies
-the target journal's formatting, renders, **checks its own output by looking at the rendered
-image**, exports numbered assets, and hands you a Word report — in **English, Chinese, or
-bilingual** — with every caption, annotation, and in-text citation location.
+<p align="center">
+  <a href="DEMO.md"><strong>▶ Open the 60-second demo</strong></a>
+  · <a href="examples/heart-failure-survival/v2_demo/">inspect the full audit trail</a>
+  · <a href="statmate/SKILL.md">read the skill</a>
+</p>
+
+> **Reference demo status:** Automated QA **PASS** · Manifest **33/33 verified** · Scientific
+> review **needs-author-decision**
+
+**StatMate** (Chinese: **统计同学**, formerly paper-figures) is an **Agent Skill** for biomedical and
+other quantitative research. Its workflow turns a manuscript, protocol, data dictionary, and real
+data into a study-design map, a data audit, and a reviewable statistical analysis plan. After the
+material decisions are resolved, saved code computes the statistics, runs diagnostics, and builds
+figures, tables, and a teaching report. The workflow requires every reported value to remain
+traceable to source data, machine-readable results, and the script that produced it.
 
 ---
 
 ## ✨ Highlights
 
 - 🛡️ **Real computation, not generated images** — figures come from statistical analysis and plotting code run on your raw data. The pipeline uses no generative image model, so results are traceable, reproducible, and stay clear of the AI image-generation line.
-- 🔬 **Data-first & honest** — every figure reveals what is *already true* in your data. Axes keep a faithful baseline, sample sizes and error definitions are stated, and p-values are computed from the data.
-- 📈 **The right chart, chosen for you** — a built-in decision guide maps your data's *shape* + your *claim* to the correct chart and statistical test.
-- 🎓 **Journal-ready formatting** — configurable presets (Nature / Science / Cell / IEEE / Elsevier / PLOS + a generic default): column widths, fonts, dpi, colorblind-safe palettes.
-- 🧬 **Vector output with editable text** — figures export as true vector PDF (and SVG/EPS), with fonts embedded so every label stays selectable and editable for a typesetter; a high-dpi raster (PNG/TIFF) ships alongside for quick preview.
-- 📐 **Academic three-line tables (三线表)** in Word, the standard format reviewers expect.
+- 🔬 **Data-first & explicit** — bar charts use an honest zero baseline; transformed axes are labelled;
+  sample sizes, uncertainty definitions, and computed p-values remain visible.
+- 🧭 **Design before tests** — establish the question, analysis unit, dependence, outcome,
+  covariates, and estimand before selecting a method.
+- 🔎 **Data audit + approval gate** — check missingness, duplicates, pseudoreplication, empty design
+  cells, privacy risks, and model estimability before formal computation.
+- 📈 **Chart and method decision support** — a built-in guide maps data shape, study design, estimand,
+  and scientific claim to defensible options; the author still reviews the choice.
+- 🎓 **Journal-style starting presets** — configurable family presets (Nature / Science / Cell / IEEE / Elsevier / PLOS + a generic default) for widths, fonts, dpi, and colorblind-safe palettes. Verify the exact journal's live rules before submission.
+- 🧬 **A practical default pair** — an immediate PNG preview plus a vector-oriented PDF;
+  substitute SVG or add venue-specific formats only when requested.
+- 📐 **Tables exported after review** — Word three-line table by default; Excel, CSV, or LaTeX only
+  when requested.
+- 🧑‍🏫 **Interpretation + reading instruction** — explain the effect, uncertainty, relevance, and
+  limits, then teach the user how to inspect each mark, interval, row, column, and footnote.
 - 🌏 **Output language is your choice** — English-only, Chinese-only, or bilingual captions & reports.
-- 🧰 **Full plotting stack** — matplotlib · seaborn · plotnine · plotly, plus lifelines & scikit-learn for survival/ML.
-- ♻️ **100% reproducible** — fixed seeds, saved scripts, recorded versions.
+- 🧰 **Core plus optional stacks** — matplotlib and seaborn in the core profile; plotnine, plotly,
+  lifelines, and scikit-learn are available through optional dependency profiles.
+- ♻️ **Auditable reproducibility** — fixed seeds, saved scripts, machine-readable results, recorded
+  versions, file hashes, and a manifest verification step.
 
 ---
 
 ## 🖼 See it in action
 
-Two complete, end-to-end runs on **real, openly-licensed published papers** live in
-[`examples/`](examples/) — raw data in, the figures and a Word report below out. Every image here
-was produced by the skill from the cited paper's own data.
+The repository contains one **auditable reference workflow** and one **visual gallery**, both built
+from openly licensed research data. No scientific marks in the figures below were generated or
+redrawn by an image model.
 
-### 🐧 Example 1 — Chart *variety* (Antarctic penguins)
+### 🫀 Auditable reference workflow — heart-failure prognosis
+
+**Design map · data audit · frozen plan · Kaplan–Meier · Cox diagnostics · internal prediction ·
+teaching report · verified manifest**
+
+[▶ 60-second walkthrough](DEMO.md) ·
+[full audit trail](examples/heart-failure-survival/v2_demo/) ·
+[illustrated DOCX](examples/heart-failure-survival/v2_demo/06_final/Heart_Failure_v2_Report.docx) ·
+[visually checked PDF](examples/heart-failure-survival/v2_demo/06_final/Heart_Failure_v2_Report.pdf)
+
+![Kaplan-Meier survival curves with confidence bands and a risk table](examples/heart-failure-survival/v2_demo/06_final/figures/Fig1.png)
+
+| Adjusted Cox model — review decision pending | Exploratory out-of-fold prediction |
+|:---:|:---:|
+| ![](examples/heart-failure-survival/v2_demo/06_final/figures/Fig2.png) | ![](examples/heart-failure-survival/v2_demo/06_final/figures/Fig3.png) |
+
+> Automated checks pass and the manifest verifies 33/33 files. The package remains
+> `needs-author-decision` because the EF proportional-hazards diagnostic is flagged and global plus
+> graphical review is pending.
+
+### 🐧 Visual gallery — Antarctic penguins
+
 **9 figures across 9 chart families + 3 three-line tables** ·
-[explore ↗](examples/penguins-sexual-dimorphism/) ·
-[📄 report](examples/penguins-sexual-dimorphism/Figure_Report.docx)
+[explore the gallery](examples/penguins-sexual-dimorphism/) ·
+[open the report](examples/penguins-sexual-dimorphism/Figure_Report.docx)
 
 | Scatter + regression | Raincloud | PCA biplot |
 |:---:|:---:|:---:|
@@ -60,48 +97,37 @@ was produced by the skill from the cited paper's own data.
 | **Correlation heatmap** | **Histogram + ECDF** | **Forest plot** |
 | ![](examples/penguins-sexual-dimorphism/figures/Fig7.png) | ![](examples/penguins-sexual-dimorphism/figures/Fig5.png) | ![](examples/penguins-sexual-dimorphism/figures/Fig9.png) |
 
-### 🫀 Example 2 — Statistical *depth* (heart-failure survival)
-**Kaplan–Meier · Cox regression · cross-validated ROC + 2 three-line tables** ·
-[explore ↗](examples/heart-failure-survival/) · reports:
-[EN](examples/heart-failure-survival/Figure_Report_EN.docx) ·
-[bilingual](examples/heart-failure-survival/Figure_Report.docx) ·
-[中文](examples/heart-failure-survival/Figure_Report_ZH.docx)
-
-| Kaplan–Meier + risk table | Cox hazard ratios | Cross-validated ROC |
-|:---:|:---:|:---:|
-| ![](examples/heart-failure-survival/figures/Fig2.png) | ![](examples/heart-failure-survival/figures/Fig4.png) | ![](examples/heart-failure-survival/figures/Fig6.png) |
-
 ---
 
-## 🎯 The 7-stage workflow
+## 🎯 The 9-stage workflow
 
 The skill is a disciplined workflow, not a one-shot prompt — the same path a careful analyst takes.
 
 | | Stage | What happens |
 |---|---|---|
-| 1️⃣ | **Read the paper** | Understand the study; list every place a figure/table would strengthen it. |
-| 2️⃣ | **Frame the figure** | One sentence: *"This figure shows that ___."* Then locate the exact raw data. |
-| 3️⃣ | **Analyze & decide** | Pick the statistic + chart from the data's shape and the claim. |
-| 4️⃣ | **Check standards** | Apply the target journal's preset (size, fonts, dpi, format). |
-| 5️⃣ | **Plot** | Write & *run* Python to render the real figure. |
-| 6️⃣ | **Self-check** | **Open the rendered image and verify** the loop closes — labels, units, *n*, significance. |
-| 7️⃣ | **Export & report** | Numbered assets + a Word report (captions, annotations, citation locations) in your chosen language. |
+| 1️⃣ | **Design map** | Extract the question, analysis unit, endpoints, timing, and claim boundary. |
+| 2️⃣ | **Data/provenance audit** | Check structure, missingness, duplicates, privacy, design cells, and source hashes. |
+| 3️⃣ | **Analysis plan** | Specify estimands, methods, assumptions, diagnostics, effects, and multiplicity. |
+| 4️⃣ | **Approval gate** | Resolve author decisions that materially change the analysis. |
+| 5️⃣ | **Code computation** | Run saved code and write machine-readable results first. |
+| 6️⃣ | **Diagnostics/sensitivity** | Challenge model fit, robustness, and multiple testing. |
+| 7️⃣ | **Build and inspect** | Generate PNG + PDF, review table content, and verify rendered assets. |
+| 8️⃣ | **Interpret and teach** | Provide scientific interpretation, manuscript wording, and a reading guide. |
+| 9️⃣ | **Final export** | After approval, output only requested table/report formats and the manifest. |
 
 ---
 
-## 💪 Why it's different
+## 💪 From ad hoc plotting to an evidence workflow
 
-| | Typical "make me a chart" | **paper-figures** |
+| Layer | Ad hoc plotting | **StatMate workflow** |
 |---|---|---|
-| Source | screenshots / made-up numbers | **your raw data, via runnable code** |
-| How it's made | sometimes a generative image model guessing pixels | **statistical computation + plotting code; every pixel traces to your data** |
-| Chart choice | whatever's default | **matched to data shape + claim** |
-| Statistics | often skipped or wrong | **design-appropriate tests, computed, reported** |
-| Honesty | truncated axes, hidden n | **enforced: zero-baseline bars, stated n & error** |
-| Journal fit | manual fiddling | **one preset, applied consistently** |
-| Self-review | none | **reads its own rendered image before exporting** |
-| Deliverable | a PNG | **numbered vector + raster + a Word report** |
-| Reproducible | no | **fixed seeds + saved scripts** |
+| Starting point | a requested chart | **study design, estimand, and real data** |
+| Method choice | selected while plotting | **written into a reviewable plan first** |
+| Computation | results may live only in a notebook | **saved code + machine-readable results** |
+| Diagnostics | separate or omitted | **model assumptions and sensitivity checks stay beside the result** |
+| Visual QA | appearance review | **appearance review plus automated canvas, DPI, and file checks** |
+| Scientific state | implicit | **draft / needs-author-decision / approved / final** |
+| Handoff | image files | **review package + selected exports + report + verified manifest** |
 
 ---
 
@@ -123,9 +149,9 @@ See the heart-failure example for the same report rendered
 
 ## 🚀 Install & deploy
 
-It's a self-contained **Agent Skill** — the `paper-figures/` folder holds a standard `SKILL.md`
-(YAML + Markdown) plus Python scripts and assets, with no agent-specific runtime. The same folder
-drops into any major agent that supports skills.
+The `statmate/` folder is designed as a portable, folder-based **Agent Skill**: `SKILL.md`, Python
+helpers, references, and assets travel together. Skill installation and trigger conventions vary by
+agent, so use the destination agent's current documentation for placement.
 
 **1. Get the skill:**
 
@@ -133,26 +159,28 @@ drops into any major agent that supports skills.
 git clone https://github.com/DRZ-hang/paper-figures.git
 ```
 
-**2. Put the `paper-figures/` folder where your agent looks for skills:**
+**2. Put the `statmate/` folder where your agent looks for skills:**
 
 - **Claude Code** — `~/.claude/skills/` (all projects) or a project's `.claude/skills/`:
   ```bash
-  cp -r paper-figures/paper-figures ~/.claude/skills/
+  cp -r paper-figures/statmate ~/.claude/skills/statmate
   # Windows PowerShell:
-  # Copy-Item -Recurse paper-figures\paper-figures $env:USERPROFILE\.claude\skills\
+  # Copy-Item -Recurse paper-figures\statmate $env:USERPROFILE\.claude\skills\statmate
   ```
 - **OpenAI Codex** — copy the folder into Codex's skills directory (see your Codex setup's skills docs for the exact path).
-- **Other skill-capable agents** — drop the same `paper-figures/` folder into that agent's skills location. Because the skill is just `SKILL.md` + scripts, one folder works everywhere; only the destination directory differs per agent.
+- **Other skill-capable agents** — drop the same `statmate/` folder into that agent's skills location. Because the skill is just `SKILL.md` + scripts, one folder works everywhere; only the destination directory differs per agent.
 
 **3. Install the Python dependencies:**
 
 ```bash
-pip install -r paper-figures/requirements.txt
+pip install -r statmate/requirements.txt       # core helpers
+pip install -r statmate/requirements-all.txt   # optional full plotting/statistics stack
 ```
 
-Once installed, the skill triggers when you ask the agent to make figures or tables for a paper.
+Once installed, invoke it explicitly with `$statmate`, or let it trigger when you ask for research
+statistics, figures, tables, interpretation, or a figure-reading guide.
 
-> Run `python paper-figures/scripts/figstyle.py --list` to see the bundled journal presets.
+> Run `python statmate/scripts/figstyle.py --list` to see the bundled journal presets.
 
 ---
 
@@ -163,44 +191,61 @@ Just describe the task to your agent with your manuscript and data at hand:
 > - *"Here's my manuscript and `results.xlsx` — make the figures for the Results section, formatted for Nature, captions in English."*
 > - *"为这篇论文的实验数据画一张分组比较图,目标期刊是 IEEE 双栏,图注用中文。"*
 > - *"Turn `cohort.csv` into a Kaplan–Meier figure and a baseline characteristics table (三线表), bilingual report."*
+> - *"Here are my protocol, data dictionary, and `results.xlsx`. Recommend and explain the
+>   statistical plan first; run it only after I approve it."*
 
-Your agent reads the paper, proposes a figure/table plan, picks the statistics and chart type,
-applies the journal preset, renders with Python, self-checks the image, exports the numbered
-assets, and gives you the Word report in your chosen language.
+Your agent maps the study design, audits the data, and presents an analysis plan for approval.
+It then runs code, diagnoses the model, builds the figures/tables, and explains both the result and
+how to read it. Final table formats are chosen only after review.
 
 ---
 
 ## 📦 What's in the box
 
 ```
-paper-figures/                     ← the skill (install this folder)
+statmate/                           ← the skill (install this folder)
 ├── SKILL.md                       ← the workflow the agent follows
-├── requirements.txt
+├── requirements.txt              ·  core helpers and common analyses
+├── requirements-demo.txt         ·  dependencies for the reference demo
+├── requirements-all.txt          ·  optional full plotting/statistics stack
+├── requirements-test.txt         ·  CI and development checks
 ├── references/                    ← decision guides loaded on demand
+│   ├── study-design-intake.md     ·  research question and design map
+│   ├── data-audit-and-provenance.md · quality, privacy, and lineage
+│   ├── analysis-plan.md           ·  analysis plan and approval gate
+│   ├── statistical-methods.md     ·  general statistical methods
+│   ├── biomedical-methods.md      ·  biomedical analysis routing
 │   ├── chart-selection.md         ·  data shape × claim → chart type
-│   ├── statistical-methods.md     ·  choosing & reporting statistics
-│   ├── journal-specs.md           ·  journal requirements + preset system
-│   └── plotting-stacks.md         ·  matplotlib / seaborn / plotnine / plotly idioms
+│   ├── interpretation-and-teaching.md · interpretation and reading guide
+│   ├── journal-specs.md           ·  venue requirements and presets
+│   └── plotting-stacks.md         ·  publication plotting idioms
 ├── scripts/
-│   ├── figstyle.py                ·  apply journal preset + export figures
+│   ├── data_audit.py              ·  JSON + Markdown data audit
+│   ├── analysis_manifest.py       ·  hashes and reproducibility manifest
+│   ├── figstyle.py                ·  PNG preview + PDF/SVG vector
+│   ├── table_export.py            ·  reviewed on-demand table export
 │   ├── docx_tables.py             ·  three-line (三线表) Word tables
 │   └── report_docx.py             ·  assemble the report (lang = en / zh / bilingual)
 └── assets/
     ├── presets.json               ·  editable journal presets
     └── report_template.md         ·  Markdown report fallback
 
+statmate/tests/                     ← unit and integration regression tests
+
 examples/                          ← two full worked examples (data + scripts + figures + reports)
 ├── penguins-sexual-dimorphism/    ·  9 chart families, 3 tables
-└── heart-failure-survival/        ·  survival / Cox / ROC, 2 tables, reports in 3 languages
+└── heart-failure-survival/        ·  v2 audited survival / Cox / prediction demo + legacy showcase
 ```
 
 ---
 
 ## 🔬 Reproducibility
 
-Every figure and table in this repo is produced solely by running the scripts in
-`examples/*/scripts/`. Random seeds are fixed, so re-running reproduces the exact output, and the
-statistics have been independently re-derived from the raw data and verified.
+Every figure and table in this repo is produced by saved code. The heart-failure demo records the
+direct package versions used for its reference run and verifies every generated file immediately.
+The same environment can reproduce machine-readable results and raster assets, but fonts, numerical
+libraries, and PDF/DOCX metadata can vary across systems. Inspect content and refresh the manifest
+after each run rather than assuming byte-identical output across environments.
 
 ```bash
 cd examples/penguins-sexual-dimorphism/scripts
@@ -208,14 +253,22 @@ for f in make_*.py; do python "$f"; done   # regenerates every figure, table & t
 
 # pick a report language for the heart-failure example:
 cd ../../heart-failure-survival/scripts
-PAPERFIG_LANG=en python make_report.py      # or zh / bilingual
+STATMATE_LANG=en python make_report.py      # or zh / bilingual; PAPERFIG_LANG remains supported
+
+# run the complete v2 evidence workflow instead:
+cd ..
+python v2_demo/04_code/run_demo.py
+
+# independently verify its hashes after a transfer or later review:
+cd ../..
+python statmate/scripts/analysis_manifest.py verify examples/heart-failure-survival/v2_demo/06_final/manifest.json
 ```
 
 ---
 
 ## ⚠️ Disclaimer
 
-paper-figures assists with analysis and figure/table production from your data; it does not
+StatMate assists with analysis and figure/table production from your data; it does not
 replace scientific judgement. Research publishing demands rigour, and the authors of the paper
 remain fully responsible for the work. Before using or submitting any figure or table, have the
 authors review the statistical methods, the chart choices, the underlying numbers, and the wording
@@ -258,6 +311,7 @@ Per-example details and license notes: [penguins](examples/penguins-sexual-dimor
 
 <div align="center">
 
-** If this helps your research, please ⭐ the repo.
+**Designed for OpenAI Codex, Claude Code, and other folder-based skill workflows.** If this helps
+your research, please ⭐ the repo after it becomes public.
 
 </div>

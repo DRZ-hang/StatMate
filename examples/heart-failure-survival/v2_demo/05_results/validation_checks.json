@@ -1,0 +1,106 @@
+{
+  "status": "pass",
+  "automated_status": "pass",
+  "review_state": "needs-author-decision",
+  "checks": [
+    {
+      "check": "exists:06_final/figures/Fig1.png",
+      "pass": true
+    },
+    {
+      "check": "exists:06_final/figures/Fig1.pdf",
+      "pass": true
+    },
+    {
+      "check": "exists:06_final/figures/Fig2.png",
+      "pass": true
+    },
+    {
+      "check": "exists:06_final/figures/Fig2.pdf",
+      "pass": true
+    },
+    {
+      "check": "exists:06_final/figures/Fig3.png",
+      "pass": true
+    },
+    {
+      "check": "exists:06_final/figures/Fig3.pdf",
+      "pass": true
+    },
+    {
+      "check": "exists:06_final/tables/Table1.csv",
+      "pass": true
+    },
+    {
+      "check": "exists:06_final/tables/Table1.docx",
+      "pass": true
+    },
+    {
+      "check": "exists:06_final/tables/Table2.csv",
+      "pass": true
+    },
+    {
+      "check": "exists:06_final/tables/Table2.docx",
+      "pass": true
+    },
+    {
+      "check": "exists:06_final/analysis_report.md",
+      "pass": true
+    },
+    {
+      "check": "exists:06_final/Heart_Failure_v2_Report.docx",
+      "pass": true
+    },
+    {
+      "check": "png_canvas_and_dpi:Fig1.png",
+      "pass": true,
+      "detail": "4251\u00d72763 px; 179.96\u00d7116.97 mm; 600.00 dpi"
+    },
+    {
+      "check": "png_canvas_and_dpi:Fig2.png",
+      "pass": true,
+      "detail": "4251\u00d72636 px; 179.96\u00d7111.59 mm; 600.00 dpi"
+    },
+    {
+      "check": "png_canvas_and_dpi:Fig3.png",
+      "pass": true,
+      "detail": "4251\u00d72211 px; 179.96\u00d793.60 mm; 600.00 dpi"
+    },
+    {
+      "check": "source_shape_299x13",
+      "pass": true
+    },
+    {
+      "check": "no_missing_cells",
+      "pass": true
+    },
+    {
+      "check": "no_duplicate_rows",
+      "pass": true
+    },
+    {
+      "check": "prediction_excludes_followup_time",
+      "pass": true,
+      "detail": "{'All 11 baseline features': ['age', 'ejection_fraction', 'serum_creatinine', 'serum_sodium', 'platelets', 'creatinine_phosphokinase', 'sex', 'anaemia', 'diabetes', 'high_blood_pressure', 'smoking'], 'Creatinine + ejection fraction': ['serum_creatinine', 'ejection_fraction']}"
+    },
+    {
+      "check": "cox_fit_completed_and_finite",
+      "pass": true
+    },
+    {
+      "check": "cox_covariate_ph_tests_finite",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "review_state_matches_ph_gate",
+      "pass": true
+    }
+  ],
+  "limitations": [
+    "Single-centre, small observational cohort.",
+    "No external validation cohort.",
+    "Binary exploratory prediction collapses unequal follow-up.",
+    "Automated checks do not establish clinical correctness or causal validity."
+  ]
+}

@@ -1,0 +1,4 @@
+-r requirements-demo.txt
+
+pytest>=8
+PyYAML>=6

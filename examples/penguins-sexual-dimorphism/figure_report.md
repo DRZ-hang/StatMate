@@ -1,12 +1,12 @@
 # Figure & Table Report / 图表报告
 ### Worked example: Antarctic penguin morphometrics / 案例:南极企鹅形态学
 
-> Produced by the **paper-figures** skill from the raw data of Gorman, Williams &
+> Produced by **StatMate（统计同学）** from the raw data of Gorman, Williams &
 > Fraser (2014). A gallery covering nine chart families and three academic
 > three-line (三线表) tables, each with a bilingual caption, annotations, and an
 > in-text citation location.
 >
-> 由 **paper-figures** 技能基于 Gorman 等 (2014) 原始数据生成。涵盖九类图型与三张
+> 由 **StatMate（统计同学）** 基于 Gorman 等 (2014) 原始数据生成。涵盖九类图型与三张
 > 学术三线表,每项均含中英双语图注、标注与正文引用位置。
 
 ## Manuscript / 稿件

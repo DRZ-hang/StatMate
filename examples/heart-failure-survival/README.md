@@ -1,11 +1,13 @@
 # Example — Survival of Heart-Failure Patients / 案例:心力衰竭患者生存分析
 
-A **statistics-heavy** worked example of the **paper-figures** skill, run end-to-end on a
+A **statistics-heavy** worked example of **StatMate（统计同学）**, run end-to-end on a
 real, openly licensed clinical dataset. Where the [penguin example](../penguins-sexual-dimorphism/)
 shows chart *variety*, this one shows statistical *depth*: survival analysis, regression
-modelling, and predictive evaluation. / 这是 **paper-figures** 技能的**统计较重**完整案例,
+modelling, and predictive evaluation. / 这是 **StatMate（统计同学）** 的**统计较重**完整案例，
 基于真实、开放许可的临床数据集端到端运行。企鹅案例展示图型**多样性**,本案例展示统计**深度**:
 生存分析、回归建模与预测评估。
+
+> **New v2 reference demo / 全新 v2 参考演示:** [open the audited workflow](v2_demo/) — study-design map, raw-data audit, frozen plan, real computation, diagnostics, PNG/PDF pairs, reviewed three-line tables, bilingual teaching report, validation record, and file-hash manifest. / [进入带完整审计链的 v2 演示](v2_demo/)。
 
 ## What this shows / 演示内容
 
@@ -41,13 +43,13 @@ as well as the full clinical panel (Fig 6) — reproducing the source paper's he
 ## Reproduce it / 复现
 
 ```bash
-pip install -r ../../paper-figures/requirements.txt   # needs lifelines, scikit-learn, python-docx
+pip install -r ../../statmate/requirements-demo.txt   # includes lifelines, scikit-learn, python-docx
 cd scripts
 for f in make_fig*.py; do python "$f"; done
 for f in make_table*.py; do python "$f"; done
 python make_report.py                    # writes the report in EN, bilingual, and 中文
 # or pick one language:
-PAPERFIG_LANG=en python make_report.py   # en | zh | bilingual
+STATMATE_LANG=en python make_report.py   # en | zh | bilingual
 ```
 
 Outputs are written to `figures/`. Random seeds are fixed (cross-validation, jitter) for

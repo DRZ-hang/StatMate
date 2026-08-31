@@ -1,13 +1,13 @@
 # Figure & Table Report / 图表报告
 ### Worked example: Survival of heart-failure patients / 案例:心力衰竭患者生存分析
 
-> Produced by the **paper-figures** skill from the raw clinical records used in
+> Produced by **StatMate（统计同学）** from the raw clinical records used in
 > Chicco & Jurman (2020). A statistics-heavy walk-through: Kaplan–Meier survival,
 > log-rank, multivariable Cox regression, non-parametric group tests, correlation,
 > and cross-validated logistic ROC — six figures and two three-line (三线表) tables,
 > each with a bilingual caption, annotations, and an in-text citation location.
 >
-> 由 **paper-figures** 技能基于 Chicco & Jurman (2020) 的原始临床数据生成。统计较重的
+> 由 **StatMate（统计同学）** 基于 Chicco & Jurman (2020) 的原始临床数据生成。统计较重的
 > 完整演示:Kaplan–Meier 生存曲线、log-rank、多因素 Cox 回归、非参数组间检验、相关分析、
 > 交叉验证 Logistic ROC——六图两表(三线表),均含中英双语图注、标注与正文引用位置。
 

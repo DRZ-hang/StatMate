@@ -2,53 +2,83 @@
 
 [English](README.md) · **中文**
 
-# 📊 paper-figures
+# 📊 StatMate（统计同学）
 
-### 用一个 AI 技能,把论文原始数据变成可直接投稿的统计图与表格。
+### 面向科研 Agent 的证据优先统计工作流。
 
-[![Agent Skill](https://img.shields.io/badge/Agent-Skill-8A2BE2)](https://claude.com/claude-code)
+[![Agent Skill](https://img.shields.io/badge/Agent-Skill-8A2BE2)](statmate/SKILL.md)
+[![StatMate tests](https://github.com/DRZ-hang/paper-figures/actions/workflows/statmate-tests.yml/badge.svg)](https://github.com/DRZ-hang/paper-figures/actions/workflows/statmate-tests.yml)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Output](https://img.shields.io/badge/输出-英文%20%2F%20双语%20%2F%20中文-red.svg)](#-输出语言)
-[![Reproducible](https://img.shields.io/badge/结果-100%25%20可复现-success.svg)](#-可复现)
 
 </div>
 
----
+![StatMate：证据优先的科研统计工作流](.github/assets/statmate-hero.svg)
 
-**paper-figures** 是一个 **Agent Skill**(可用于 [Claude Code](https://claude.com/claude-code)、
-OpenAI Codex 等支持 skills 的主流 agent):给它论文稿件和**原始数据**,它就产出期刊可接受的图表。
-所有结果都来自对你自己数据的真实统计计算,并会根据论文要论证的内容选择正确的图型;图像由绘图代码(matplotlib、seaborn 等)渲染,**整个流程没有任何
-生成式图像模型参与**,因此始终远离 AI 生图的红线——每一个像素都能追溯到数据中的某个数字。
-它会通读文章、找出需要配图的地方、按数据形态与论证目标选定统计方法与图型、套用目标期刊格式、
-绘制、**打开渲染出的图自检**、按编号导出,并交付一份 Word 报告(**全英 / 全中 / 中英双语任选**),
-其中包含每张图表的图注、标注与正文引用位置。
+<p align="center">
+  <a href="DEMO.zh-CN.md"><strong>▶ 打开 60 秒 Demo</strong></a>
+  · <a href="examples/heart-failure-survival/v2_demo/">查看完整审计链</a>
+  · <a href="statmate/SKILL.md">阅读 Skill</a>
+</p>
+
+> **参考 Demo 状态：** 自动 QA **PASS** · Manifest **33/33 验证通过** · 科学审查
+> **needs-author-decision（需要作者决定）**
+
+**StatMate（统计同学）**（原 paper-figures）是一个面向生物医学并可用于其他定量领域的
+**Agent Skill**。它把论文、方案、数据字典和真实数据整理成研究设计地图、数据审计与可审阅的
+统计分析计划；实质性决策解决后，再通过保存的代码完成计算、模型诊断、图表与教学报告。工作流
+要求每个报告数值都能追溯到源数据、机器可读结果和生成脚本。
 
 ---
 
 ## ✨ 亮点
 
 - 🛡️ **真实计算,而非生成图像** — 图表由对原始数据的统计分析与绘图代码产生,全程没有生成式图像模型参与;结果可溯源、可复现,始终不触及 AI 生图红线。
-- 🔬 **数据优先、诚实** — 每张图都呈现数据中**本就为真**的事实;坐标轴保持忠实的基线,样本量 *n* 与误差定义都会标注,p 值由数据计算得出。
-- 📈 **自动选对图型** — 内置"数据形态 × 论证目标 → 图型 + 统计检验"的决策库。
-- 🎓 **符合期刊规范** — 可配置预设(Nature / Science / Cell / IEEE / Elsevier / PLOS + 通用默认):栏宽、字体、dpi、色盲安全配色。
-- 🧬 **矢量输出、文字可编辑** — 图表导出为真正的矢量 PDF(以及 SVG/EPS),字体内嵌、每个标签都可选可改,方便排版人员调整;同时附带高分辨率位图(PNG/TIFF)便于快速预览。
-- 📐 **学术三线表(Word)** — 审稿人期待的标准表格格式。
+- 🔬 **数据优先、表达明确** — 柱状图使用诚实的零基线，变换坐标必须标注；样本量、
+  不确定性定义和真实计算的 p 值保持可见。
+- 🧭 **研究设计先于检验** — 先确认研究问题、分析单位、配对/重复/聚类结构、结局、协变量和目标估计量，再选择方法。
+- 🔎 **数据审计 + 分析审批门槛** — 检查缺失、重复、异常编码、伪重复、空设计单元和模型可估计性；关键选择确认后才正式计算。
+- 📈 **图型与方法决策支持** — 综合数据形态、研究设计、目标估计量和论证目标给出可辩护的选项，最终选择仍由作者审核。
+- 🎓 **期刊风格起始预设** — 提供 Nature / Science / Cell / IEEE / Elsevier / PLOS 与通用预设的栏宽、字体、dpi 和色盲安全配色；投稿前必须按具体期刊最新指南复核。
+- 🧬 **实用的默认图像对** — 默认一张 PNG 审阅图 + 一张偏矢量的 PDF；SVG 或期刊特殊格式按需生成。
+- 📐 **审核后按需导出表格** — 默认 Word 三线表，可选 Excel、CSV 或 LaTeX，不提前制造多余文件。
+- 🧑‍🏫 **结果解释 + 阅读教学** — 说明结果、效应、不确定性和结论边界，并逐项教用户阅读点、线、误差棒、区间、表格列和脚注。
 - 🌏 **输出语言任你选** — 图注与报告可选全英、全中或中英双语。
-- 🧰 **主流绘图栈全覆盖** — matplotlib · seaborn · plotnine · plotly,外加 lifelines 与 scikit-learn 做生存/机器学习。
-- ♻️ **100% 可复现** — 固定随机种子、保留脚本、记录版本。
+- 🧰 **核心与可选工具栈分层** — 核心依赖包含 matplotlib 与 seaborn；plotnine、plotly、
+  lifelines 和 scikit-learn 通过可选依赖配置安装。
+- ♻️ **可审计复现** — 固定随机种子、保留脚本与机器结果、记录版本和文件哈希，并在交付前验证 manifest。
 
 ---
 
 ## 🖼 实际演示
 
-[`examples/`](examples/) 中有两个基于**真实、开放许可论文**的完整端到端案例:输入原始数据,
-输出下方的图与 Word 报告。下面每张图都由技能从所引论文的原始数据生成。
+仓库包含一套**可审计参考工作流**和一个**科研图型画廊**，都使用开放许可的真实研究
+数据。下面科研图中的数据标记没有经过生成式图像模型重绘。
 
-### 🐧 案例 1 — 图型多样性(南极企鹅)
+### 🫀 可审计参考工作流 — 心衰预后分析
+
+**研究设计地图 · 数据审计 · 冻结计划 · Kaplan–Meier · Cox 诊断 · 内部预测 · 教学报告 ·
+验证清单**
+
+[▶ 60 秒导览](DEMO.zh-CN.md) ·
+[完整审计链](examples/heart-failure-survival/v2_demo/) ·
+[图文 DOCX](examples/heart-failure-survival/v2_demo/06_final/Heart_Failure_v2_Report.docx) ·
+[逐页检查的 PDF](examples/heart-failure-survival/v2_demo/06_final/Heart_Failure_v2_Report.pdf)
+
+![含置信带与风险人数的 Kaplan-Meier 生存曲线](examples/heart-failure-survival/v2_demo/06_final/figures/Fig1.png)
+
+| 校正 Cox 模型 — 尚待作者决定 | 探索性折外预测 |
+|:---:|:---:|
+| ![](examples/heart-failure-survival/v2_demo/06_final/figures/Fig2.png) | ![](examples/heart-failure-survival/v2_demo/06_final/figures/Fig3.png) |
+
+> 自动检查通过，清单 33/33 验证一致；但 EF 的比例风险诊断被标记，整体与图形诊断仍待
+> 完成，所以整包保持 `needs-author-decision`。
+
+### 🐧 科研图型画廊 — 南极企鹅
+
 **9 类图型 9 张图 + 3 张三线表** ·
-[查看 ↗](examples/penguins-sexual-dimorphism/) ·
-[📄 报告](examples/penguins-sexual-dimorphism/Figure_Report.docx)
+[查看画廊](examples/penguins-sexual-dimorphism/) ·
+[打开报告](examples/penguins-sexual-dimorphism/Figure_Report.docx)
 
 | 散点 + 回归 | 云雨图 | PCA 双标图 |
 |:---:|:---:|:---:|
@@ -56,48 +86,37 @@ OpenAI Codex 等支持 skills 的主流 agent):给它论文稿件和**原始数�
 | **相关热图** | **直方图 + ECDF** | **森林图** |
 | ![](examples/penguins-sexual-dimorphism/figures/Fig7.png) | ![](examples/penguins-sexual-dimorphism/figures/Fig5.png) | ![](examples/penguins-sexual-dimorphism/figures/Fig9.png) |
 
-### 🫀 案例 2 — 统计深度(心衰生存分析)
-**Kaplan–Meier · Cox 回归 · 交叉验证 ROC + 2 张三线表** ·
-[查看 ↗](examples/heart-failure-survival/) · 报告:
-[英文](examples/heart-failure-survival/Figure_Report_EN.docx) ·
-[双语](examples/heart-failure-survival/Figure_Report.docx) ·
-[中文](examples/heart-failure-survival/Figure_Report_ZH.docx)
-
-| Kaplan–Meier + 风险表 | Cox 风险比 | 交叉验证 ROC |
-|:---:|:---:|:---:|
-| ![](examples/heart-failure-survival/figures/Fig2.png) | ![](examples/heart-failure-survival/figures/Fig4.png) | ![](examples/heart-failure-survival/figures/Fig6.png) |
-
 ---
 
-## 🎯 七阶段工作流
+## 🎯 九阶段工作流
 
 这是一套有纪律的工作流,而非一次性提示——就是一位严谨分析者会走的路径。
 
 | | 阶段 | 做什么 |
 |---|---|---|
-| 1️⃣ | **通读文章** | 理解研究;列出所有适合配图/配表的地方。 |
-| 2️⃣ | **图的立意** | 一句话:*"这张图要表明 ___。"* 然后定位精确的原始数据。 |
-| 3️⃣ | **剖析与选型** | 按数据形态与论证目标选定统计方法与图型。 |
-| 4️⃣ | **查规范** | 套用目标期刊预设(尺寸、字体、dpi、格式)。 |
-| 5️⃣ | **绘制** | 编写并**运行** Python,得到真实图像。 |
-| 6️⃣ | **自检** | **打开渲染图核对**闭环是否合理——标签、单位、*n*、显著性。 |
-| 7️⃣ | **导出 + 报告** | 编号资产 + 你所选语言的 Word 报告(图注、标注、引用位置)。 |
+| 1️⃣ | **研究设计地图** | 从稿件/方案识别问题、分析单位、结局、时间和结论边界。 |
+| 2️⃣ | **数据与溯源审计** | 核查结构、缺失、重复、隐私、设计单元和源文件哈希。 |
+| 3️⃣ | **统计分析计划** | 给出方法决策表、假设、诊断、效应量、校正和备选方案。 |
+| 4️⃣ | **审批门槛** | 让作者确认会实质影响分析的设计与数据决策。 |
+| 5️⃣ | **代码计算** | 保存并运行代码，先输出机器可读统计结果。 |
+| 6️⃣ | **诊断与敏感性分析** | 检查模型、稳健性和多重比较，不挑选“好看”的结果。 |
+| 7️⃣ | **图表制作与自检** | 生成 PNG + PDF，制作表格预览并逐项核对。 |
+| 8️⃣ | **解读与教学** | 分开写科研解读、论文表述和逐图逐表阅读指南。 |
+| 9️⃣ | **审核后最终导出** | 只输出用户需要的最终表格格式、报告与追溯清单。 |
 
 ---
 
-## 💪 与众不同之处
+## 💪 从临时出图到证据工作流
 
-| | 普通"帮我画个图" | **paper-figures** |
+| 层级 | 临时出图 | **StatMate 工作流** |
 |---|---|---|
-| 数据来源 | 截图 / 编造数字 | **你的原始数据,经可运行代码** |
-| 出图方式 | 有时是生成式图像模型"猜"像素 | **统计计算 + 绘图代码;每个像素都可追溯到你的数据** |
-| 图型选择 | 默认随便 | **匹配数据形态 + 论证目标** |
-| 统计 | 常被略过或出错 | **设计恰当的检验,计算并报告** |
-| 诚实性 | 截轴、藏 n | **强制:柱状图零基线、注明 n 与误差** |
-| 期刊适配 | 手动反复调 | **一套预设,统一应用** |
-| 自检 | 无 | **导出前先读自己渲染的图** |
-| 交付物 | 一张 PNG | **编号矢量 + 位图 + Word 报告** |
-| 可复现 | 否 | **固定种子 + 保留脚本** |
+| 起点 | 一张指定图 | **研究设计、目标估计量与真实数据** |
+| 方法选择 | 作图时临时决定 | **先写成可审阅的分析计划** |
+| 计算 | 结果可能只留在笔记本 | **保存代码 + 机器可读结果** |
+| 诊断 | 分散或缺失 | **模型假设与敏感性检查紧邻结果** |
+| 视觉 QA | 只看外观 | **外观检查 + 画布、DPI 与文件自动检查** |
+| 科学状态 | 隐含 | **draft / needs-author-decision / approved / final** |
+| 交付 | 图像文件 | **审阅包 + 按需导出 + 报告 + 验证清单** |
 
 ---
 
@@ -118,9 +137,8 @@ OpenAI Codex 等支持 skills 的主流 agent):给它论文稿件和**原始数�
 
 ## 🚀 安装与多平台部署
 
-它是一个自包含的 **Agent Skill**:`paper-figures/` 文件夹里是标准的 `SKILL.md`(YAML + Markdown)
-加 Python 脚本与资源,不依赖任何特定 agent 的运行时。**同一个文件夹可放进任何支持 skills 的主流
-agent**。
+`statmate/` 被设计成可携带的文件夹式 **Agent Skill**：`SKILL.md`、Python 辅助脚本、
+参考资料与资源放在一起。不同 Agent 的安装位置与触发约定并不相同，请以目标 Agent 的最新文档为准。
 
 **1. 获取技能:**
 
@@ -128,26 +146,27 @@ agent**。
 git clone https://github.com/DRZ-hang/paper-figures.git
 ```
 
-**2. 把 `paper-figures/` 文件夹放到你所用 agent 的 skills 目录:**
+**2. 把 `statmate/` 文件夹放到你所用 agent 的 skills 目录：**
 
 - **Claude Code** — `~/.claude/skills/`(所有项目)或某项目的 `.claude/skills/`:
   ```bash
-  cp -r paper-figures/paper-figures ~/.claude/skills/
+  cp -r paper-figures/statmate ~/.claude/skills/statmate
   # Windows PowerShell:
-  # Copy-Item -Recurse paper-figures\paper-figures $env:USERPROFILE\.claude\skills\
+  # Copy-Item -Recurse paper-figures\statmate $env:USERPROFILE\.claude\skills\statmate
   ```
 - **OpenAI Codex** — 把该文件夹复制进 Codex 的 skills 目录(具体路径见你所用 Codex 的 skills 文档)。
-- **其他支持 skills 的 agent(如小龙虾等)** — 同样把 `paper-figures/` 文件夹放进该 agent 的 skills 位置即可。技能本质就是 `SKILL.md` + 脚本,一个文件夹各处通用,只是目标目录因 agent 而异。
+- **其他支持 skills 的 agent（如小龙虾等）** — 同样把 `statmate/` 文件夹放进该 agent 的 skills 位置即可。技能本质就是 `SKILL.md` + 脚本，一个文件夹各处通用，只是目标目录因 agent 而异。
 
 **3. 安装 Python 依赖:**
 
 ```bash
-pip install -r paper-figures/requirements.txt
+pip install -r statmate/requirements.txt       # 核心辅助脚本
+pip install -r statmate/requirements-all.txt   # 可选完整绘图/统计栈
 ```
 
-安装后,当你请求 agent 为论文绘制图表时,技能会自动触发。
+安装后可用 `$statmate` 显式调用；当你请求研究统计、图表、结果解释或读图教学时也可自动触发。
 
-> 运行 `python paper-figures/scripts/figstyle.py --list` 可查看内置期刊预设。
+> 运行 `python statmate/scripts/figstyle.py --list` 可查看内置期刊预设。
 
 ---
 
@@ -158,42 +177,57 @@ pip install -r paper-figures/requirements.txt
 > - *"这是我的稿件和 `results.xlsx`,帮我画结果部分的图,按 Nature 规范,图注用英文。"*
 > - *"为这篇论文的实验数据画一张分组比较图,目标期刊是 IEEE 双栏,图注用中文。"*
 > - *"把 `cohort.csv` 做成 Kaplan–Meier 图和一张基线特征三线表,出中英双语报告。"*
+> - *"这是研究方案、数据字典和 `results.xlsx`，先判断统计方法并解释理由；我确认后再正式分析。"*
 
-你的 agent 会通读文章、提出图表方案、选定统计与图型、套用期刊预设、用 Python 绘制、读图自检、
-按编号导出,并给出你所选语言的 Word 报告。
+你的 agent 会先建立研究设计地图并审计数据，交付统计分析计划供确认；随后运行代码、诊断模型、
+生成图表和结果解读。最终表格格式在审核通过后按需选择。
 
 ---
 
 ## 📦 仓库结构
 
 ```
-paper-figures/                     ← 技能本体(安装这个文件夹)
+statmate/                           ← 技能本体（安装这个文件夹）
 ├── SKILL.md                       ← agent 遵循的工作流
-├── requirements.txt
+├── requirements.txt              ·  核心工具与常用分析依赖
+├── requirements-demo.txt         ·  参考案例依赖
+├── requirements-all.txt          ·  可选完整绘图/统计栈
+├── requirements-test.txt         ·  CI 与开发检查依赖
 ├── references/                    ← 按需加载的决策指南
+│   ├── study-design-intake.md     ·  研究问题与设计地图
+│   ├── data-audit-and-provenance.md · 数据质量、隐私与溯源
+│   ├── analysis-plan.md           ·  统计分析计划与审批门槛
+│   ├── statistical-methods.md     ·  通用统计方法
+│   ├── biomedical-methods.md      ·  生物医学分析路由
 │   ├── chart-selection.md         ·  数据形态 × 论证目标 → 图型
-│   ├── statistical-methods.md     ·  统计方法的选择与报告
+│   ├── interpretation-and-teaching.md · 结果解读与阅读教学
 │   ├── journal-specs.md           ·  期刊规范 + 预设系统
-│   └── plotting-stacks.md         ·  matplotlib / seaborn / plotnine / plotly 写法
+│   └── plotting-stacks.md         ·  绘图库的发表级写法
 ├── scripts/
-│   ├── figstyle.py                ·  套用期刊预设 + 导出图
+│   ├── data_audit.py              ·  JSON + Markdown 数据审计
+│   ├── analysis_manifest.py       ·  文件哈希与复现清单
+│   ├── figstyle.py                ·  PNG 预览 + PDF/SVG 矢量图
+│   ├── table_export.py            ·  审核后按需导出表格
 │   ├── docx_tables.py             ·  三线表 Word 表格
 │   └── report_docx.py             ·  生成报告(lang = en / zh / bilingual)
 └── assets/
     ├── presets.json               ·  可编辑的期刊预设
     └── report_template.md         ·  Markdown 报告备用模板
 
+statmate/tests/                     ← 单元与集成回归测试
+
 examples/                          ← 两个完整案例(数据 + 脚本 + 图 + 报告)
 ├── penguins-sexual-dimorphism/    ·  9 类图型,3 张表
-└── heart-failure-survival/        ·  生存 / Cox / ROC,2 张表,3 种语言报告
+└── heart-failure-survival/        ·  v2 审计型生存 / Cox / 预测演示 + 旧版展示
 ```
 
 ---
 
 ## 🔬 可复现
 
-仓库中所有图表均由运行 `examples/*/scripts/` 中的脚本生成;随机种子固定,重跑即可精确重现;
-所有统计量已用原始数据独立复核。
+仓库中所有图表均由保存的代码生成。心衰演示记录了参考运行使用的直接依赖版本，并在每次生成后
+立即验证所有产物。相同环境可复现机器可读结果和位图资产，但字体、数值库以及 PDF/DOCX 元数据可能
+随系统变化。每次运行后应检查内容并刷新 manifest，不应假定跨环境字节完全相同。
 
 ```bash
 cd examples/penguins-sexual-dimorphism/scripts
@@ -201,14 +235,22 @@ for f in make_*.py; do python "$f"; done   # 重新生成全部图、表与报�
 
 # 为心衰案例选择报告语言:
 cd ../../heart-failure-survival/scripts
-PAPERFIG_LANG=zh python make_report.py      # 或 en / bilingual
+STATMATE_LANG=zh python make_report.py      # 或 en / bilingual；仍兼容 PAPERFIG_LANG
+
+# 或运行完整 v2 证据工作流:
+cd ..
+python v2_demo/04_code/run_demo.py
+
+# 传输或后续审核后，可独立验证全部哈希:
+cd ../..
+python statmate/scripts/analysis_manifest.py verify examples/heart-failure-survival/v2_demo/06_final/manifest.json
 ```
 
 ---
 
 ## ⚠️ 免责声明
 
-paper-figures 是辅助你从数据出发完成分析与图表制作的工具,不能替代科研判断。科研发表要求严谨,
+StatMate（统计同学）是辅助你从数据出发完成分析与图表制作的工具，不能替代科研判断。科研发表要求严谨，
 论文作者对成果负全部责任。在使用或投稿任何图表之前,请由作者本人对其统计方法、图型选择、底层
 数值以及每条图注的措辞进行专业、准确性的审核。请把输出视为一份需要核验的高质量草稿,通过专业
 审核后再定稿使用。
@@ -247,6 +289,7 @@ paper-figures 是辅助你从数据出发完成分析与图表制作的工具,�
 
 <div align="center">
 
-** 如果它帮到了你的研究,欢迎点亮 ⭐。
+**面向 OpenAI Codex、Claude Code 与其他文件夹式 Skill 工作流设计。** 等仓库公开后，
+如果它帮到了你的研究，欢迎点亮 ⭐。
 
 </div>

@@ -1,4 +1,4 @@
-"""Shared data loading for the Palmer Penguins example (paper-figures skill demo).
+"""Shared data loading for the Palmer Penguins example (StatMate skill demo).
 
 Loads the raw Gorman et al. (2014) penguin morphometrics, makes figstyle.py
 importable, and exposes tidy column names so every figure/table script starts
@@ -17,7 +17,7 @@ except Exception:
 
 # --- make the skill's figstyle helper importable ---------------------------
 _HERE = Path(__file__).resolve().parent
-_SKILL_SCRIPTS = _HERE.parents[2] / "paper-figures" / "scripts"
+_SKILL_SCRIPTS = _HERE.parents[2] / "statmate" / "scripts"
 sys.path.insert(0, str(_SKILL_SCRIPTS))
 
 from docx_tables import three_line_table  # noqa: E402  (re-exported for table scripts)

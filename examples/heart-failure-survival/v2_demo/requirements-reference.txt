@@ -1,0 +1,11 @@
+# Direct dependency versions used for the checked-in reference run.
+# This is a reproducibility record, not a complete transitive lock file.
+numpy==2.5.2
+pandas==2.3.3
+matplotlib==3.11.1
+seaborn==0.13.2
+scipy==1.18.0
+statsmodels==0.14.6
+lifelines==0.30.3
+scikit-learn==1.9.0
+python-docx==1.2.0

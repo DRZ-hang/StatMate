@@ -1,4 +1,4 @@
-"""Shared data loading for the Heart-Failure survival example (paper-figures demo).
+"""Shared data loading for the Heart-Failure survival example (StatMate demo).
 
 Loads the Chicco & Jurman (2020) heart-failure clinical records, makes the skill's
 figstyle/docx helpers importable, and labels the categorical codes so figures and
@@ -19,7 +19,7 @@ except Exception:
     pass
 
 _HERE = Path(__file__).resolve().parent
-_SKILL_SCRIPTS = _HERE.parents[2] / "paper-figures" / "scripts"
+_SKILL_SCRIPTS = _HERE.parents[2] / "statmate" / "scripts"
 sys.path.insert(0, str(_SKILL_SCRIPTS))
 
 from docx_tables import three_line_table  # noqa: E402  (re-exported for table scripts)

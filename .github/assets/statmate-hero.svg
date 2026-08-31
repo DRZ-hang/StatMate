@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="560" viewBox="0 0 1400 560" role="img" aria-labelledby="title desc">
+  <title id="title">StatMate - evidence-first statistical workflows for research agents</title>
+  <desc id="desc">A dark blue StatMate banner showing a design-to-verification workflow and stylized survival, forest-plot, and manifest panels.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#102640"/>
+      <stop offset="1" stop-color="#173a52"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#36c5a3"/>
+      <stop offset="1" stop-color="#62a8ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#02070d" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="560" rx="30" fill="url(#bg)"/>
+  <circle cx="1230" cy="-40" r="270" fill="#2f78ff" opacity="0.12"/>
+  <circle cx="1070" cy="590" r="250" fill="#2cd7ae" opacity="0.10"/>
+
+  <g transform="translate(76 70)">
+    <rect x="0" y="0" width="278" height="34" rx="17" fill="#173b50" stroke="#4fd7b5" stroke-opacity="0.55"/>
+    <circle cx="20" cy="17" r="5" fill="#4fd7b5"/>
+    <text x="35" y="23" fill="#bcefe3" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600">EVIDENCE-FIRST AGENT SKILL</text>
+
+    <text x="0" y="116" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="78" font-weight="750" letter-spacing="-2">StatMate</text>
+    <text x="3" y="157" fill="#9fc1dc" font-family="Segoe UI, Arial, sans-serif" font-size="24">统计同学 · research statistics you can inspect</text>
+
+    <text x="0" y="218" fill="#e5f0f8" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="600">Design → Audit → Plan → Compute</text>
+    <text x="0" y="255" fill="#e5f0f8" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="600">Diagnose → Visualize → Explain → Verify</text>
+
+    <rect x="0" y="292" width="520" height="5" rx="2.5" fill="url(#accent)"/>
+    <text x="0" y="340" fill="#aec5d8" font-family="Segoe UI, Arial, sans-serif" font-size="18">Real data · saved code · explicit review states</text>
+
+    <g transform="translate(0 375)" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600">
+      <g><rect width="112" height="34" rx="17" fill="#163246"/><text x="18" y="22" fill="#d8e9f4">PNG + PDF</text></g>
+      <g transform="translate(124 0)"><rect width="124" height="34" rx="17" fill="#163246"/><text x="18" y="22" fill="#d8e9f4">DOCX tables</text></g>
+      <g transform="translate(260 0)"><rect width="170" height="34" rx="17" fill="#163246"/><text x="18" y="22" fill="#d8e9f4">SHA-256 manifest</text></g>
+    </g>
+  </g>
+
+  <g transform="translate(680 58)" filter="url(#shadow)">
+    <rect x="0" y="0" width="644" height="444" rx="24" fill="#f8fbfd"/>
+    <rect x="0" y="0" width="644" height="54" rx="24" fill="#eaf2f7"/>
+    <rect x="0" y="31" width="644" height="23" fill="#eaf2f7"/>
+    <circle cx="28" cy="27" r="6" fill="#ff6b6b"/>
+    <circle cx="49" cy="27" r="6" fill="#f7c948"/>
+    <circle cx="70" cy="27" r="6" fill="#4fd7b5"/>
+    <text x="98" y="34" fill="#34516a" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">auditable analysis package</text>
+
+    <g transform="translate(30 84)">
+      <rect width="358" height="202" rx="14" fill="#ffffff" stroke="#d8e5ed"/>
+      <text x="20" y="29" fill="#26465e" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">Time-to-event evidence</text>
+      <line x1="42" y1="162" x2="330" y2="162" stroke="#9fb3c1" stroke-width="1.5"/>
+      <line x1="42" y1="52" x2="42" y2="162" stroke="#9fb3c1" stroke-width="1.5"/>
+      <path d="M42 62 H83 V69 H121 V76 H160 V88 H205 V97 H250 V113 H292 V129 H330" fill="none" stroke="#e66b1d" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M42 58 H90 V63 H138 V70 H182 V76 H230 V81 H278 V88 H330" fill="none" stroke="#12a982" stroke-width="4" stroke-linejoin="round"/>
+      <g fill="#7890a1" font-family="Segoe UI, Arial, sans-serif" font-size="10">
+        <text x="42" y="184">0</text><text x="130" y="184">60</text><text x="217" y="184">120</text><text x="304" y="184">240 days</text>
+      </g>
+    </g>
+
+    <g transform="translate(412 84)">
+      <rect width="202" height="202" rx="14" fill="#ffffff" stroke="#d8e5ed"/>
+      <text x="18" y="29" fill="#26465e" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">Model diagnostics</text>
+      <line x1="96" y1="48" x2="96" y2="171" stroke="#9fb3c1" stroke-dasharray="5 4"/>
+      <g stroke-width="3">
+        <line x1="54" y1="68" x2="113" y2="68" stroke="#ef7a24"/><rect x="77" y="62" width="12" height="12" fill="#ef7a24"/>
+        <line x1="73" y1="99" x2="126" y2="99" stroke="#ef7a24"/><rect x="94" y="93" width="12" height="12" fill="#ef7a24"/>
+        <line x1="91" y1="130" x2="154" y2="130" stroke="#7d8e99"/><rect x="118" y="124" width="12" height="12" fill="#7d8e99"/>
+        <line x1="106" y1="161" x2="177" y2="161" stroke="#ef7a24"/><rect x="137" y="155" width="12" height="12" fill="#ef7a24"/>
+      </g>
+    </g>
+
+    <g transform="translate(30 310)">
+      <rect width="584" height="104" rx="14" fill="#102b3e"/>
+      <text x="20" y="28" fill="#ddecf5" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">Verification gate</text>
+      <g font-family="Segoe UI, Arial, sans-serif" font-size="14">
+        <circle cx="31" cy="56" r="10" fill="#4fd7b5"/><path d="M26 56 l4 4 7 -8" fill="none" stroke="#08352a" stroke-width="2.5"/><text x="50" y="61" fill="#ddecf5">rendered assets checked</text>
+        <circle cx="253" cy="56" r="10" fill="#4fd7b5"/><path d="M248 56 l4 4 7 -8" fill="none" stroke="#08352a" stroke-width="2.5"/><text x="272" y="61" fill="#ddecf5">manifest verified</text>
+        <circle cx="449" cy="56" r="10" fill="#f4b860"/><text x="445.5" y="61" fill="#5a3a06" font-weight="800">!</text><text x="468" y="61" fill="#ddecf5">review state clear</text>
+      </g>
+      <text x="20" y="88" fill="#8eb0c6" font-family="Segoe UI, Arial, sans-serif" font-size="12">Files, sizes, hashes, assumptions, limitations, and author decisions stay visible.</text>
+    </g>
+  </g>
+</svg>

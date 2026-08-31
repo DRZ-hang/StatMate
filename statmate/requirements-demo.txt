@@ -1,0 +1,5 @@
+-r requirements.txt
+
+# Heart-failure v2 reference workflow
+lifelines>=0.27
+scikit-learn>=1.3

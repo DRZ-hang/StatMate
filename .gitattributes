@@ -1,5 +1,5 @@
-# Normalize text line endings in the repo; check out native on each OS.
-* text=auto
+# Keep repository text byte-stable across operating systems so provenance hashes verify after clone.
+* text=auto eol=lf
 
 # Treat generated assets as binary (no diff/merge/EOL conversion).
 *.png binary

@@ -5,6 +5,17 @@ __pycache__/
 venv/
 env/
 *.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+*.log
+.ipynb_checkpoints/
 
 # Generated figures / outputs (don't commit user data or rendered assets)
 figures/

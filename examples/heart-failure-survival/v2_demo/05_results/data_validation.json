@@ -1,0 +1,38 @@
+{
+  "source_sha256": "9c73cea7468ff5d517801ec050fe9993da5912fce4b56f296f8df3b38dd75912",
+  "shape": [
+    299,
+    13
+  ],
+  "expected_columns_exact": true,
+  "duplicate_rows_n": 0,
+  "missing_cells_n": 0,
+  "anaemia_binary": true,
+  "diabetes_binary": true,
+  "high_blood_pressure_binary": true,
+  "sex_binary": true,
+  "smoking_binary": true,
+  "DEATH_EVENT_binary": true,
+  "broad_range_checks": {
+    "age": true,
+    "ejection_fraction": true,
+    "serum_creatinine": true,
+    "serum_sodium": true,
+    "platelets": true,
+    "creatinine_phosphokinase": true,
+    "time": true
+  },
+  "patients_n": 299,
+  "deaths_n": 96,
+  "censored_n": 203,
+  "follow_up_median_days": 115.0,
+  "follow_up_range_days": [
+    4,
+    285
+  ],
+  "ef_group_counts": {
+    "\u226430%": 93,
+    "31\u201345%": 146,
+    ">45%": 60
+  }
+}
